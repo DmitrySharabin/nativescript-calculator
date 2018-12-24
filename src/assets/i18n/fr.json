@@ -1,0 +1,7 @@
+{
+    "APP_NAME": "Calculatrice",
+    "ERROR_MESSAGE": "Div/0!",
+    "DIALOG_TITLE": "La langue de l'application",
+    "DIALOG_MESSAGE": "Choisissez la langue",
+    "DIALOG_CANCEL_BUTTON_TEXT": "Annuler"
+}

@@ -1,0 +1,13 @@
+{
+    "xml.fileAssociations": [
+        {
+            "systemId": "/Users/dmitrysharabin/Documents/NativeScript/Calculator/schema/tns.xsd",
+            "pattern": "**/**/*.xml"
+        }
+    ],
+    "files.exclude": {
+        "schema": true
+    },
+    "editor.snippetSuggestions": "top",
+    "NE.enable.snippets": true
+}

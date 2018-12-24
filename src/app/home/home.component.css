@@ -1,0 +1,11 @@
+Button {
+    font-size: 25;
+    background-color: white;
+    border-color: lightgray;
+    border-width: 0.2;
+}
+
+.highlight {
+    background-color: coral;
+    color: white;
+}

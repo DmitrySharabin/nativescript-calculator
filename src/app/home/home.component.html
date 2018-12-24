@@ -1,0 +1,36 @@
+<ActionBar [title]=" 'APP_NAME' | translate " class="action-bar">
+    <ActionItem (tap)="changeLanguage()" ios.position="right">
+       <Label text="&#xf0ac;" class="fa"></Label>
+    </ActionItem>
+</ActionBar>
+
+<GridLayout columns="*, *, *, *" rows="3*, *, *, *, *, *" class="page" style="background-color: #eeeeee;">
+    <Label [text]="inputField" row="0" colSpan="4" [ngClass]="{'text-danger': isError, 'p-10': true}"
+        verticalAlignment="center" textAlignment="right" fontSize="50">
+    </Label>
+    <Button text="C" row="1" col="0" (tap)="clear()" color="coral"></Button>
+    <Button text="⌫" row="1" col="1" (tap)="backspace()" [isEnabled]="!isError"></Button>
+    <Button text="±" row="1" col="2" (tap)="changeSign()" [isEnabled]="!isError"></Button>
+    <Button text="÷" row="1" col="3" (tap)="setOperationByCode(2)"
+        [isEnabled]="!isError"></Button>
+    <Button text="7" row="2" col="0" (tap)="inputDigit(7)" [isEnabled]="!isError"></Button>
+    <Button text="8" row="2" col="1" (tap)="inputDigit(8)" [isEnabled]="!isError"></Button>
+    <Button text="9" row="2" col="2" (tap)="inputDigit(9)" [isEnabled]="!isError"></Button>
+    <Button text="×" row="2" col="3" (tap)="setOperationByCode(1)"
+        [isEnabled]="!isError"></Button>
+    <Button text="4" row="3" col="0" (tap)="inputDigit(4)" [isEnabled]="!isError"></Button>
+    <Button text="5" row="3" col="1" (tap)="inputDigit(5)" [isEnabled]="!isError"></Button>
+    <Button text="6" row="3" col="2" (tap)="inputDigit(6)" [isEnabled]="!isError"></Button>
+    <Button text="–" row="3" col="3" (tap)="setOperationByCode(4)"
+        [isEnabled]="!isError"></Button>
+    <Button text="1" row="4" col="0" (tap)="inputDigit(1)" [isEnabled]="!isError"></Button>
+    <Button text="2" row="4" col="1" (tap)="inputDigit(2)" [isEnabled]="!isError"></Button>
+    <Button text="3" row="4" col="2" (tap)="inputDigit(3)" [isEnabled]="!isError"></Button>
+    <Button text="+" row="4" col="3" (tap)="setOperationByCode(3)"
+        [isEnabled]="!isError"></Button>
+    <Button *ngIf="isDecimalComma; else decimalDot" text="," row="5" col="0" (tap)="addDot()" [isEnabled]="!isError"></Button>
+    <ng-template #decimalDot><Button text="." row="5" col="0" (tap)="addDot()" [isEnabled]="!isError"></Button></ng-template>
+    <Button text="0" row="5" col="1" (tap)="inputDigit(0)" [isEnabled]="!isError"></Button>
+    <Button text="=" row="5" col="2" colSpan="2" (tap)="evaluate()" [ngClass]="{highlight: !isError}"
+        [isEnabled]="!isError"></Button>
+</GridLayout>
