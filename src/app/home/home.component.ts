@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { device } from "platform";
-import * as dialogs from "tns-core-modules/ui/dialogs";
+import { device } from 'platform';
+import * as dialogs from 'tns-core-modules/ui/dialogs';
 
 @Component({
-    selector: "Home",
+    selector: 'Home',
     moduleId: module.id,
-    templateUrl: "home.component.html",
+    templateUrl: 'home.component.html',
     styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
@@ -225,10 +225,10 @@ export class HomeComponent implements OnInit {
     // Изменяем язык приложения.
     changeLanguage(): void {
         const chooseLanguageDialogOptions = {
-            title: "",
-            message: "",
-            cancelButtonText: "",
-            actions: ["Русский", "English", "Français"]
+            title: '',
+            message: '',
+            cancelButtonText: '',
+            actions: ['Русский', 'English', 'Français']
         };
         // Переведём элементы диалогового окна на текущий язык.
         this.translateService
