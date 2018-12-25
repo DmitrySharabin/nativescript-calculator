@@ -193,7 +193,9 @@ export class HomeComponent implements OnInit {
                 if (this.secondArg === 0) {
                     // Если выбрана операция деления и второй аргумент равен нулю,
                     // то выводим сообщение об ошибке.
-                    this.translateService.get('ERROR_MESSAGE').subscribe(translation => this.inputField = translation);
+                    this.translateService
+                        .get('ERROR_MESSAGE')
+                        .subscribe(translation => this.inputField = translation);
                     // И отключаем все кнопки, кроме кнопки очистки поля ввода.
                     this.isError = true;
                     return;
@@ -229,9 +231,15 @@ export class HomeComponent implements OnInit {
             actions: ["Русский", "English", "Français"]
         };
         // Переведём элементы диалогового окна на текущий язык.
-        this.translateService.get('DIALOG_TITLE').subscribe(translation => chooseLanguageDialogOptions.title = translation);
-        this.translateService.get('DIALOG_MESSAGE').subscribe(translation => chooseLanguageDialogOptions.message = translation);
-        this.translateService.get('DIALOG_CANCEL_BUTTON_TEXT').subscribe(translation => chooseLanguageDialogOptions.cancelButtonText = translation);
+        this.translateService
+            .get('DIALOG_TITLE')
+            .subscribe(translation => chooseLanguageDialogOptions.title = translation);
+        this.translateService
+            .get('DIALOG_MESSAGE')
+            .subscribe(translation => chooseLanguageDialogOptions.message = translation);
+        this.translateService
+            .get('DIALOG_CANCEL_BUTTON_TEXT')
+            .subscribe(translation => chooseLanguageDialogOptions.cancelButtonText = translation);
 
         // Отобразим пользователю диалоговое окно и установим язык приложения в соответствии с выбором пользователя.
         dialogs.action(chooseLanguageDialogOptions).then((result) => {
