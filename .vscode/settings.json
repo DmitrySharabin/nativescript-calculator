@@ -9,5 +9,7 @@
         "schema": true
     },
     "editor.snippetSuggestions": "top",
-    "NE.enable.snippets": true
+    "NE.enable.snippets": true,
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single"
 }
