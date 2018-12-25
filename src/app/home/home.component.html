@@ -28,8 +28,7 @@
     <Button text="3" row="4" col="2" (tap)="inputDigit(3)" [isEnabled]="!isError"></Button>
     <Button text="+" row="4" col="3" (tap)="setOperationByCode(3)"
         [isEnabled]="!isError"></Button>
-    <Button *ngIf="isDecimalComma; else decimalDot" text="," row="5" col="0" (tap)="addDot()" [isEnabled]="!isError"></Button>
-    <ng-template #decimalDot><Button text="." row="5" col="0" (tap)="addDot()" [isEnabled]="!isError"></Button></ng-template>
+    <Button [text]=" isDecimalComma ? ',' : '.' " row="5" col="0" (tap)="addDot()" [isEnabled]="!isError"></Button>
     <Button text="0" row="5" col="1" (tap)="inputDigit(0)" [isEnabled]="!isError"></Button>
     <Button text="=" row="5" col="2" colSpan="2" (tap)="evaluate()" [ngClass]="{highlight: !isError}"
         [isEnabled]="!isError"></Button>
